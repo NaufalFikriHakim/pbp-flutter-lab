@@ -1,5 +1,5 @@
 # counter_7
-
+## Tugas 7
 ### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 - Stateless widget adlaah widget yang dimuat secara statis. Seluruh konfigurasi yang dimuat didalamnya telah diinisiasikan sejak awal widget tersebut dibuat. Stateless widget adalah sebuah widget yang tidak dapat diubah dan tidak akan pernah berubah.
 - Stateful widget merupakan suatu widget yang sifatnya dinamis atau dapat berubah-ubah, kebalikan dari stateless widget. Stateful widget dapat mengubah tampilan, menambah widget, mengubah nilai variabel, icon, warna, dan lain-lain.
@@ -23,3 +23,30 @@ Final harus diinisiasikan terlebih dahulu, tidak bisa diubah valuenya, dan harus
 2. Membuat fungsi untuk mendecrement counter
 3. Menambahkan widget FloatingActionButton kedua untuk mendecrement dan akan hilang apabila counternya = 0
 4. Membuat Text berwarna merah ketika counter % 2 = 0, dan biru ketika tidak terpenuhi. 
+
+## Tugas 8
+
+### Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
+`Navigator.push` akan menambahkan (push) sebuah rute ke tumpukan (_stack_) Navigator. Sedangkan `Navigator.pushReplacement` akan mengganti rute yang sedang ditampilkan dengan *push* route atau halaman baru ke stack Navigator.
+### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+`TextFormField` field untuk menerima input dari user. <br>
+`Drawer` sebagai hamburger menu untuk navigasi ke page berbeda. <br>
+`DropdownButtonFormField` sebagai dropdown untuk menentukan input yang diberikan merupakan pemasukan atau pengeluaran. <br>
+`FloatingActionButton` sebagai button yang di-bind untuk menambah data ke dalam list <br>
+`Card` untuk menampilkan data input yang ada pada list.
+### Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).
+1. `onPressed()`
+2. `onTap()`
+3. `onChanged()`
+4. `onSaved()`
+### Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Navigator bekerja seperti struktur data stack, yaitu konsep _Last In First Out_. Setiap tampilan akan di-_push_ ke stack Navigator untuk ditampilkan. Jadi, tampilan yang ditampilkan merupakan halaman yang terakhir di-_push_ atau berada pada posisi paling atas pada stack.
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Membuat widget drawer untuk navigasi ke halaman lain.
+2. Membuat file form.dart untuk menerima input dari user. Judul dan Nominal menerima input menggunakan TextFormField sementara untuk tipe pemasukan dan pengeluaran menggunakan DropdownButtonFormField.
+3. Membuat FloatingActionButton yang di-bind untuk menyimpan input. Selain itu, mem-validasi apakah input sudah terisi benar atau belum.
+4. Menambahkan input yang sudah tervalidasi ke dalam list data.
+5. Membuat data.dart untuk menampilkan data input yang sudah disimpan.
+5. Mengimport file .dart agar list input data dapat diakses pada data.dart.
+6. Menampilkan data pada list dengan menggunakan builder ListView.builder().
+7. Membuat Card untuk menampilkan judul, nominal, jenis budget.
