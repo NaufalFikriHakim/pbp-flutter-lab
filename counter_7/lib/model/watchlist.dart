@@ -20,9 +20,9 @@ class WatchList {
         required this.review,
     });
 
-    String watched;
+    bool watched;
     String title;
-    double rating;
+    int rating;
     String releaseDate;
     String review;
 

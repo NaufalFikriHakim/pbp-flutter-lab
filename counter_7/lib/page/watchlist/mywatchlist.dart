@@ -56,7 +56,7 @@ class _WatchListState extends State<WatchList> {
                             padding: const EdgeInsets.all(20.0),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                border: Border.all(color: (snapshot.data![index].watched == "true" ? Colors.blue : Colors.red),),
+                                border: Border.all(color: (snapshot.data![index].watched == true ? Colors.blue : Colors.red),),
                                 borderRadius: BorderRadius.circular(5.0),
                                 boxShadow: const [
                                   BoxShadow(
@@ -73,7 +73,7 @@ class _WatchListState extends State<WatchList> {
                                     fontSize: 16.0,
                                   ),
                                 ),
-                                Checkbox(value: snapshot.data![index].watched == "true" ? true : false, onChanged: (value) {
+                                Checkbox(value: snapshot.data![index].watched ? true : false, onChanged: (value) {
                                   setState(() {
                                     snapshot.data![index].watched = value!;
                                   });

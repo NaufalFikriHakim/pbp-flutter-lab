@@ -5,7 +5,7 @@ import '/model/watchlist.dart';
 Future<List<WatchList>> fetchToDo() async {
   print("fetching data..");
   var url = Uri.parse(
-      'https://tugas-2-pbp-naufalfikrihakim.herokuapp.com/mywatchlist/json');
+      'https://web-production-4fcd.up.railway.app/mywatchlist/json');
   var response = await http.get(
     url,
     headers: {
