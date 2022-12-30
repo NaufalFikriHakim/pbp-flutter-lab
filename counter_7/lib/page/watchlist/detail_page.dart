@@ -60,7 +60,7 @@ class DetailPage extends StatelessWidget {
                     "Status: ",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Text((watchList.watched == true ? "Watched" : "Not Yet"),
+                  Text((watchList.watched ? "Watched" : "Not Yet"),
                       style: TextStyle(fontSize: 20))
                 ],
               ),
