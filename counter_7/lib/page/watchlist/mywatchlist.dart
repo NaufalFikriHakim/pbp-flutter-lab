@@ -14,7 +14,6 @@ class WatchList extends StatefulWidget {
 }
 
 class _WatchListState extends State<WatchList> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,17 +45,21 @@ class _WatchListState extends State<WatchList> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>  DetailPage(watchList: snapshot.data![index])),
+                                  builder: (context) => DetailPage(
+                                      watchList: snapshot.data![index])),
                             );
                           },
                           child: Container(
-                            
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 6),
                             padding: const EdgeInsets.all(20.0),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                border: Border.all(color: (snapshot.data![index].watched == true ? Colors.blue : Colors.red),),
+                                border: Border.all(
+                                  color: (snapshot.data![index].watched
+                                      ? Colors.blue
+                                      : Colors.red),
+                                ),
                                 borderRadius: BorderRadius.circular(5.0),
                                 boxShadow: const [
                                   BoxShadow(
@@ -65,7 +68,6 @@ class _WatchListState extends State<WatchList> {
                                 ]),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              
                               children: [
                                 Text(
                                   "${snapshot.data![index].title}",
@@ -73,12 +75,15 @@ class _WatchListState extends State<WatchList> {
                                     fontSize: 16.0,
                                   ),
                                 ),
-                                Checkbox(value: snapshot.data![index].watched ? true : false, onChanged: (value) {
-                                  setState(() {
-                                    snapshot.data![index].watched = value!;
-                                  });
-                                  
-                                }, 
+                                Checkbox(
+                                  value: snapshot.data![index].watched
+                                      ? true
+                                      : false,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      snapshot.data![index].watched = value!;
+                                    });
+                                  },
                                 )
                               ],
                             ),
